@@ -1,4 +1,4 @@
-#variant s funktsiei
+#Shyfr Cezarya
 def cezar (sdvig, tekst):
 
     alphavit=(" abcdefghijklmnopqrstuvwxyz")
@@ -7,31 +7,15 @@ def cezar (sdvig, tekst):
         for x in alphavit:
             if tekst[i]==x:
                 num=alphavit.index(x)+sdvig
-                if num >= len(alphavit):
+                while num >= len(alphavit):
                     num=num-len(alphavit)
+                while num < 0:
+                    num=num+len(alphavit)
                 result=result+alphavit[num]
-    return print (result)
+    return print (f"Result: \"{result}\"")
 
-sdvig=int(input())
-text=input()
+sdvig=int(input().strip())
+text=input().strip()
 
 cezar (sdvig, text)
 
-'''
-#1 variant resheniaya
-
-sdvig=int(input())
-text=input()
-
-alphavit=(" abcdefghijklmnopqrstuvwxyz")
-result=('')
-for i in range(len(tekst)):
-    for x in alphavit:
-        if tekst[i]==x:
-            num=alphavit.index(x)+sdvig
-            if num >= len(alphavit):
-                num=num-len(alphavit)
-            result=result+alphavit[num]
-
-print (result)
-'''
